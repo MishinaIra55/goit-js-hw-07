@@ -27,8 +27,6 @@ function createPictureMarkup(items) {
 ref.addEventListener('click', selectBigPicture);
 // Реализация делегирования на div.gallery и получение url большого изображения.
 
-
-
 function selectBigPicture(event) {
    event.preventDefault(event);//запретила скачивание фото
    
@@ -41,8 +39,8 @@ function selectBigPicture(event) {
       if(event.code === 'Escape') {
          instance.close();
       }
+      console.log(event.code);
    });
-
 };
 
 
