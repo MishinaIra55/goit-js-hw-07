@@ -20,7 +20,9 @@ function createPictureMarkup(items) {
    .join("");
 }
 
-let lightbox = new SimpleLightbox('.gallery a');
-lightbox.on('show.simplelightbox', function () {
-	console.log('хуета');
+let lightbox = new SimpleLightbox('.gallery a', {
+   captions: true,
+   captionsData: 'alt',
+   captionDelay: 250
 });
+lightbox.on('show.simplelightbox');
