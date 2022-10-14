@@ -1,5 +1,7 @@
 import { galleryItems } from "./gallery-items.js";
 
+
+
 const ref = document.querySelector(".gallery");
 
 const PictureMarkup = createPictureMarkup(galleryItems);
@@ -9,7 +11,7 @@ function createPictureMarkup(items) {
    return items
    .map(({ preview, original, description }) => {
       return ` 
-      <a class="gallery__item" href="${original}">
+      <a class="gallery__item" href="${original}" uk-lightbox>
          <img class="gallery__image" 
          src="${preview}" 
          alt="${description}" />
@@ -18,4 +20,7 @@ function createPictureMarkup(items) {
    .join("");
 }
 
-console.log(galleryItems);
+let lightbox = new SimpleLightbox('.gallery a');
+lightbox.on('show.simplelightbox', function () {
+	console.log('хуета');
+});

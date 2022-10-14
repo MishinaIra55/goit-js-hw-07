@@ -30,6 +30,10 @@ ref.addEventListener('click', selectBigPicture);
 function selectBigPicture(event) {
    event.preventDefault(event);//запретила скачивание фото
    
+   if (evt.target.nodeName !== "IMG"){
+      return;
+   }
+
    const instance = basicLightbox.create(`
       <img src="${event.target.getAttribute('data-source')}" width="800" height="600">`
       );
